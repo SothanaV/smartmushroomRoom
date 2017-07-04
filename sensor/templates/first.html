@@ -23,7 +23,6 @@
 <body>
 	<div class="jumbotron text-center">
   		<h1>Status</h1>
-  		<div id="graph"></div>
   			<script type="text/javascript">
   				$.getJSON( "{% url 'showdata' %}", function( data ) {
   					console.log(JSON.stringify(data));
@@ -35,10 +34,18 @@
               			labels:['temp','humi'],
               			pointSize: 2,
               			lineWidth: 3,
+              			resize: true,
               		});
   				});
 
   			</script>
 	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="graph" style="text-align:center";></div>
+			</div>
+		</div>
+	</div>
 </body>
-</html>>
+</html>

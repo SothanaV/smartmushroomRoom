@@ -62,7 +62,7 @@ void SendData(float h,float t)
     if((WiFiMulti.run() == WL_CONNECTED)) 
     {
         HTTPClient http;
-        String str = "http://" +String(Server)+":8010" +"/data/" + String(t)+"/"+String(h)+"/1234567898765435678909890989098765432432342123432345678765434567/";
+        String str = "http://" +String(Server)+":8010" +"/data/1/" + String(t)+"/"+String(h)+"/1234567898765435678909890989098765432432342123432345678765434567";
         Serial.println(str);
         http.begin(str);
         int httpCode = http.GET();
@@ -89,6 +89,6 @@ void SendData(float h,float t)
         }
         http.end();
     }
-    delay(1000);
+    delay(10000);
 }
 
