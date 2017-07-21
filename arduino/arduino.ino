@@ -14,8 +14,8 @@ int relay = 5;        //setpin of relay at D1
 int DHTTYPE = DHT11;                  //set Dht Type 
 DHT dht(DHTPIN, DHTTYPE);             //define DHT type and pin
 void SendData(float h , float t);     //Define Senddata Voide
-const char* ssid     = "linksys_SES_54153";            //Set ssid ใส่ชื่อwifi
-const char* password = "vasabilab";                    //Set Password ใส่พาสเวิร์ดwifi
+const char* ssid     = "PlantBiotech";            //Set ssid ใส่ชื่อwifi
+const char* password = "plantbiotech";                    //Set Password ใส่พาสเวิร์ดwifi
 const char* Server   = "139.59.99.17";                //set Server Domain or Server ip ใส่โดเมนหรือไอพีเซิฟเวอร์
 ESP8266WiFiMulti WiFiMulti;
 void setup() 

@@ -42,7 +42,8 @@ def getdata(request,nodeid,temp,humi,key):
 
 
 def showdata(request):
-	data = Room.objects.all().values('nodeid','temp','humi','time') 
+	#data = Room.objects.all().values('nodeid','temp','humi','time')
+	data = Room.objects.all()[:1000].values('nodeid','temp','humi','time') 
 	return JsonResponse( list(data) , safe= False)
 def graph(request):
 	return render(request, 'first.html')
