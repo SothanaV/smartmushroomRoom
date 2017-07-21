@@ -42,7 +42,7 @@ def getdata(request,nodeid,temp,humi,key):
 
 
 def showdata(request):
-	data = Room.objects.all().values('nodeid','temp','humi','time') 
+	data = Room.objects.raw("SELECT * FROM sensor_room id % 200 =0 order by times desc limit 500 ").values('nodeid','temp','humi','time') 
 	return JsonResponse( list(data) , safe= False)
 def graph(request):
 	return render(request, 'first.html')
