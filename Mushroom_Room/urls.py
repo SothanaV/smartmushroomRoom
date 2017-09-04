@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^data/(?P<nodeid>\d+)/(?P<temp>\d+\.\d+)/(?P<humi>\d+\.\d+)/(?P<key>\d+)$', views.getdata, name='getdata'),
     url(r'^getdata/', views.showdata, name='showdata'),
     url(r'^home/', views.graph, name='home'),
+    url(r'^amchart/', views.amchart, name='amchart'),
+
 ]

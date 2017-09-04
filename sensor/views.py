@@ -32,11 +32,11 @@ def getdata(request,nodeid,temp,humi,key):
 			humi 	= float(humi),
 				)
 		data_box.save()
-		print data_box
-		print nodeid
-		print "SAVE"
+		print (data_box)
+		print (nodeid)
+		print ("SAVE")
 	else:
-		print "UnSAVE"
+		print ("UnSAVE")
 	
 	return HttpResponse("Command",content_type='text/plain')
 
@@ -44,7 +44,9 @@ def getdata(request,nodeid,temp,humi,key):
 def showdata(request):
 
 	#data = Room.objects.all().values('nodeid','temp','humi','time')
-	data = Room.objects.all().order_by("-time").values('nodeid','temp','humi','time')[:500:200] 
+	data = Room.objects.all().order_by("-time").values('nodeid','temp','humi','time')[:1000:50] 
 	return JsonResponse( list(data) , safe= False)
 def graph(request):
 	return render(request, 'first.html')
+def amchart(request):
+	return render(request, 'graph2.html')
